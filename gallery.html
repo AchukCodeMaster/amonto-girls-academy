@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photo gallery of Mother Mary Primary School's facilities, events, and activities">
+    <title>Gallery - Mother Mary Primary School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Mother Mary Primary School</span>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="admission.html">Admission</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>School Gallery</h1>
+                <p>Capturing moments and memories at Mother Mary Primary School</p>
+            </div>
+        </section>
+
+        <section class="gallery-filters">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="academics">Academics</button>
+                    <button class="filter-btn" data-filter="sports">Sports</button>
+                    <button class="filter-btn" data-filter="events">Events</button>
+                    <button class="filter-btn" data-filter="facilities">Facilities</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-grid">
+            <div class="container">
+                <div class="masonry-grid">
+                    <!-- Academics -->
+                    <div class="gallery-item academics" data-category="academics">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop"
+                            alt="Students in classroom">
+                        <div class="item-overlay">
+                            <h3>Primary Science Class</h3>
+                            <p>Students engaging in hands-on learning</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item academics" data-category="academics">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&auto=format&fit=crop"
+                            alt="Library session">
+                        <div class="item-overlay">
+                            <h3>School Library</h3>
+                            <p>Our well-stocked library promotes reading culture</p>
+                        </div>
+                    </div>
+
+                    <!-- Sports -->
+                    <div class="gallery-item sports" data-category="sports">
+                        <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?w=800&auto=format&fit=crop"
+                            alt="Football match">
+                        <div class="item-overlay">
+                            <h3>Inter-House Sports</h3>
+                            <p>Annual football tournament</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item sports" data-category="sports">
+                        <img src="https://images.unsplash.com/photo-1569517282132-25d22f4573e6?w=800&auto=format&fit=crop"
+                            alt="Athletics">
+                        <div class="item-overlay">
+                            <h3>Athletics Meet</h3>
+                            <p>Students competing in track events</p>
+                        </div>
+                    </div>
+
+                    <!-- Events -->
+                    <div class="gallery-item events" data-category="events">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&auto=format&fit=crop"
+                            alt="Cultural day">
+                        <div class="item-overlay">
+                            <h3>Cultural Day</h3>
+                            <p>Celebrating our diverse heritage</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item events" data-category="events">
+                        <img src="https://images.unsplash.com/photo-1574280363402-2f672940b871?w=800&auto=format&fit=crop"
+                            alt="Graduation ceremony">
+                        <div class="item-overlay">
+                            <h3>P7 Graduation</h3>
+                            <p>Celebrating our graduates' achievements</p>
+                        </div>
+                    </div>
+
+                    <!-- Facilities -->
+                    <div class="gallery-item facilities" data-category="facilities">
+                        <img src="https://images.unsplash.com/photo-1568667256549-094345857637?w=800&auto=format&fit=crop"
+                            alt="Computer lab">
+                        <div class="item-overlay">
+                            <h3>Computer Laboratory</h3>
+                            <p>Modern facilities for digital learning</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item facilities" data-category="facilities">
+                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop"
+                            alt="Library">
+                        <div class="item-overlay">
+                            <h3>School Library</h3>
+                            <p>A quiet space for reading and research</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Mother Mary Primary School</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="admission.html">Admission</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Info</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Plot 123, Arua Municipality, Uganda</p>
+                        <p><i class="fas fa-phone"></i> +256 123 456 789</p>
+                        <p><i class="fas fa-envelope"></i> info@mothermaryprimary.ug</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <p class="copyright">&copy; 2024 Mother Mary Primary School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/js/navigation.js"></script>
+    <script type="module" src="/js/gallery.js"></script>
+</body>
+
+</html>

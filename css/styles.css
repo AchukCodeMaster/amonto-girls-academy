@@ -954,6 +954,121 @@ body {
   }
 }
 
+/* Why Choose Us Section */
+.why-choose-us {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, var(--light-bg), var(--white));
+}
+
+.why-choose-us h2 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.why-choose-us h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.feature-icon i {
+  font-size: 1.8rem;
+  color: var(--white);
+}
+
+.feature-card h3 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .welcome-message {
+    padding: 3rem 0;
+  }
+
+  .welcome-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .signature-with-profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .headshot {
+    width: 60px;
+    height: 60px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-us h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+}
+
 /* Downloads Section */
 .downloads {
   padding: 5rem 0;
@@ -1257,6 +1372,228 @@ body {
   }
 }
 
+/* This was added as a custom design due to conflicts with other elements. */
+
 .admission-header {
-  margin-top: 50px;
+  margin-top: 100px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.admission-subheader {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+/* Welcome Message Section */
+.welcome-message {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.welcome-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.welcome-content h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.headteacher-message {
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+.headteacher-message p {
+  margin-bottom: 1.5rem;
+}
+
+.signature-with-profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.signature {
+  font-family: "Playfair Display", serif;
+}
+
+.signature .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.2rem;
+}
+
+.signature .title {
+  color: var(--text-color);
+  font-style: italic;
+}
+
+.headshot {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--white);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 576px) {
+  .welcome-message {
+    padding: 3rem 0;
+  }
+
+  .welcome-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .signature-with-profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .headshot {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Gallery Page Styles */
+.gallery-filters {
+  padding: 2rem 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--light-bg);
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  background: var(--light-bg);
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.gallery-grid {
+  padding: 3rem 0;
+  background: var(--light-bg);
+}
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.gallery-item.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover .item-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.item-overlay h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-overlay p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .filter-buttons {
+    padding: 0 1rem;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .masonry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    margin: 0 1rem;
+  }
 }
