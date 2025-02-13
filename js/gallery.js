@@ -17,11 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
           filterValue === "all" ||
           item.getAttribute("data-category") === filterValue
         ) {
-          item.style.opacity = "1";
-          item.style.transform = "scale(1)";
+          item.classList.remove("hidden");
+          setTimeout(() => {
+            item.style.opacity = "1";
+            item.style.transform = "scale(1)";
+          }, 50);
         } else {
-          item.style.opacity = "0.3";
-          item.style.transform = "scale(0.95)";
+          item.style.opacity = "0";
+          item.style.transform = "scale(0.9)";
+          setTimeout(() => {
+            item.classList.add("hidden");
+          }, 500); // Match this with the transition duration
         }
       });
     });
@@ -35,34 +41,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Smooth scroll for gallery
-  const gallery = document.querySelector(".masonry-grid");
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  gallery.addEventListener("mousedown", (e) => {
-    isDown = true;
-    gallery.style.cursor = "grabbing";
-    startX = e.pageX - gallery.offsetLeft;
-    scrollLeft = gallery.scrollLeft;
+  // Lazy loading for images
+  const lazyLoad = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target.querySelector("img");
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute("data-src");
+        }
+        observer.unobserve(entry.target);
+      }
+    });
   });
 
-  gallery.addEventListener("mouseleave", () => {
-    isDown = false;
-    gallery.style.cursor = "grab";
-  });
-
-  gallery.addEventListener("mouseup", () => {
-    isDown = false;
-    gallery.style.cursor = "grab";
-  });
-
-  gallery.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - gallery.offsetLeft;
-    const walk = (x - startX) * 2;
-    gallery.scrollLeft = scrollLeft - walk;
+  galleryItems.forEach((item) => {
+    lazyLoad.observe(item);
   });
 });
