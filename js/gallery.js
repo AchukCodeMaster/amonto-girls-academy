@@ -17,17 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
           filterValue === "all" ||
           item.getAttribute("data-category") === filterValue
         ) {
-          item.style.display = "block";
-          setTimeout(() => {
-            item.style.opacity = "1";
-            item.style.transform = "scale(1)";
-          }, 50);
+          item.style.opacity = "1";
+          item.style.transform = "scale(1)";
         } else {
-          item.style.opacity = "0";
-          item.style.transform = "scale(0.8)";
-          setTimeout(() => {
-            item.style.display = "none";
-          }, 300);
+          item.style.opacity = "0.3";
+          item.style.transform = "scale(0.95)";
         }
       });
     });
@@ -41,18 +35,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Lazy loading for images
-  const lazyLoad = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const img = entry.target.querySelector("img");
-        img.src = img.getAttribute("data-src");
-        observer.unobserve(entry.target);
-      }
-    });
+  // Smooth scroll for gallery
+  const gallery = document.querySelector(".masonry-grid");
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  gallery.addEventListener("mousedown", (e) => {
+    isDown = true;
+    gallery.style.cursor = "grabbing";
+    startX = e.pageX - gallery.offsetLeft;
+    scrollLeft = gallery.scrollLeft;
   });
 
-  galleryItems.forEach((item) => {
-    lazyLoad.observe(item);
+  gallery.addEventListener("mouseleave", () => {
+    isDown = false;
+    gallery.style.cursor = "grab";
+  });
+
+  gallery.addEventListener("mouseup", () => {
+    isDown = false;
+    gallery.style.cursor = "grab";
+  });
+
+  gallery.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - gallery.offsetLeft;
+    const walk = (x - startX) * 2;
+    gallery.scrollLeft = scrollLeft - walk;
   });
 });
