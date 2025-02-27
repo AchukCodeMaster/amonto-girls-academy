@@ -2227,12 +2227,12 @@ body {
   gap: 3rem;
 }
 
-.contact-info {
+/* .contact-info {
   background: var(--white);
   padding: 2.5rem;
   border-radius: 20px;
   box-shadow: var(--shadow);
-}
+} */
 
 .contact-info h3 {
   color: var(--primary-color);
