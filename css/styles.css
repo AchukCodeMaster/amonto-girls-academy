@@ -541,8 +541,8 @@ body {
 .footer-badge {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
-  border: 3px solid var(--white);
+  /* border-radius: 50%; */
+  /* border: 3px solid var(--white); */
 }
 
 .contact-info p {
@@ -701,7 +701,7 @@ body {
 
 /* Fees Section */
 .fees {
-  padding: 5rem 0;
+  padding: 8rem 0 5rem;
   background: var(--light-bg);
 }
 
@@ -709,61 +709,94 @@ body {
   text-align: center;
   font-size: 2.5rem;
   color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.fees-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-color);
   margin-bottom: 3rem;
 }
 
-.fees-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.fees-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
 .fee-card {
   background: var(--white);
-  border-radius: 10px;
-  padding: 2rem;
-  text-align: center;
+  border-radius: 15px;
   box-shadow: var(--shadow);
   transition: var(--transition);
-  position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
 }
 
-.fee-card.featured {
-  border: 2px solid var(--secondary-color);
-  transform: scale(1.05);
+.fee-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.fee-card.featured::before {
-  content: "Most Popular";
-  position: absolute;
-  top: 1.5rem;
-  right: -4rem;
-  background: var(--secondary-color);
+.fee-header {
+  background: var(--primary-color);
   color: var(--white);
-  padding: 0.5rem 4rem;
-  transform: rotate(45deg);
-  font-size: 0.8rem;
-  font-weight: bold;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.fee-header::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: var(--primary-color);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
 }
 
 .fee-header i {
-  font-size: 2.5rem;
-  color: var(--primary-color);
+  font-size: 3rem;
   margin-bottom: 1rem;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 50%;
 }
 
 .fee-header h3 {
-  color: var(--primary-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
+.fee-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.fee-content {
+  padding: 3rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
 .fee-amount {
-  margin: 2rem 0;
-  padding: 1rem;
-  background: var(--light-bg);
-  border-radius: 5px;
+  margin: 1rem 0 2rem;
+  text-align: center;
+  background: rgba(13, 71, 161, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .fee-amount .currency {
@@ -772,7 +805,7 @@ body {
 }
 
 .fee-amount .amount {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: var(--primary-color);
   margin: 0 0.5rem;
@@ -785,31 +818,79 @@ body {
 .fee-details {
   list-style: none;
   margin: 2rem 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem 2rem;
 }
 
 .fee-details li {
-  margin-bottom: 1rem;
+  padding: 0.8rem;
   color: var(--text-color);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .fee-details i {
   color: var(--secondary-color);
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
 }
 
 .fee-cta {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   background: var(--primary-color);
   color: var(--white);
   text-decoration: none;
-  border-radius: 25px;
+  border-radius: 30px;
   transition: var(--transition);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
 }
 
 .fee-cta:hover {
   background: var(--secondary-color);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 150, 136, 0.4);
+}
+
+.fee-note {
+  margin-top: 3rem;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--white);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    transition: var(--transition);
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .fee-details {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Facilities Section */
