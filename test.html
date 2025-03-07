@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unity Secondary School - Academic programs and curriculum in Juba, South Sudan">
+    <title>Unity Secondary School - Academics | Juba, South Sudan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #0d47a1;
+            --secondary-color: #009688;
+            --accent-color: #ffc107;
+            --text-color: #2c3e50;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header and Navigation */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .school-badge {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .school-name {
+            margin-left: 10px;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+
+            
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+            background: rgba(13, 71, 161, 0.1);
+        }
+
+        .contact-btn {
+            background: var(--primary-color);
+            color: var(--white) !important;
+            border-radius: 25px !important;
+        }
+
+        .contact-btn:hover {
+            background: var(--secondary-color) !important;
+            color: var(--white) !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 71, 161, 0.8), rgba(13, 71, 161, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 8rem 0 5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hero-stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            min-width: 200px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-stat h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Curriculum Section */
+        .curriculum-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: var(--white);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .subject-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .subject-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .subject-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Departments Section */
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .department-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .department-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .department-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .department-header i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .department-content {
+            padding: 2rem;
+        }
+
+        .department-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .department-subjects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .department-subject {
+            background: rgba(13, 71, 161, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Programs Section */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+
+        .program-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .program-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .program-content p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .program-cta {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            transition: var(--transition);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .program-cta:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Performance Section */
+        .performance-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .performance-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .performance-stat {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .performance-stat:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .performance-stat h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .awards-list {
+            flex: 1;
+            min-width: 300px;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .awards-list h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .award-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .award-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .award-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-right: 1rem;
+            min-width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .award-info h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Staff Section */
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .staff-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .staff-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .staff-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .staff-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .staff-card:hover .staff-image img {
+            transform: scale(1.1);
+        }
+
+        .staff-info {
+            padding: 1.5rem;
+        }
+
+        .staff-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .staff-info p {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .staff-subjects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .staff-subject {
+            background: rgba(13, 71, 161, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Facilities Section */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .facility-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: var(--shadow);
+        }
+
+        .facility-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .facility-card:hover .facility-image {
+            transform: scale(1.1);
+        }
+
+        .facility-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .facility-card:hover .facility-overlay {
+            background: linear-gradient(transparent, rgba(13, 71, 161, 0.9));
+        }
+
+        .facility-overlay h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Activities Section */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .activity-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .activity-header i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .activity-body {
+            padding: 1.5rem;
+        }
+
+        .activity-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .activity-schedule {
+            background: rgba(13, 71, 161, 0.05);
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .activity-schedule h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Downloads Section */
+        .downloads-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .download-item {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .download-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .download-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .download-info {
+            flex-grow: 1;
+        }
+
+        .download-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            transition: var(--transition);
+            text-align: center;
+            margin-top: 1.5rem;
+            font-weight: 500;
+        }
+
+        .download-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(13, 71, 161, 0.9), rgba(13, 71, 161, 0.9)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            padding: 5rem 0;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .cta-btn.primary {
+            background: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .cta-btn.primary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .cta-btn.secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            border-color: var(--white);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #f8f9fa;
+            padding: 5rem 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #f8f9fa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-links i {
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-contact ul {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-contact i {
+            margin-right: 1rem;
+            color: var(--secondary-color);
+            min-width: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 1.5rem;
+        }
+
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 25px 0 0 25px;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .performance-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="https://via.placeholder.com/50/0d47a1/ffffff?text=USS" alt="School Badge"
+                    class="school-badge">
+                <span class="school-name">Unity Secondary School</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="academics.html" class="active">Academics</a></li>
+                <li><a href="admission.html">Admission</a></li>
+                <li><a href="contact.html" class="contact-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Academic Excellence</h1>
+            <p>At Unity Secondary School, we are committed to providing quality education that prepares students for
+                future success. Our comprehensive academic programs are designed to develop critical thinking,
+                creativity, and leadership skills.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h3>95%</h3>
+                    <p>Pass Rate</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>20+</h3>
+                    <p>Qualified Teachers</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>15</h3>
+                    <p>Academic Programs</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>12</h3>
+                    <p>National Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="curriculum">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Curriculum</h2>
+                <p>Unity Secondary School follows the South Sudan National Curriculum, offering a wide range of subjects
+                    that prepare students for higher education and future careers.</p>
+            </div>
+            <div class="curriculum-tabs">
+                <button class="tab-btn active" data-tab="o-level">O-Level (S1-S4)</button>
+                <button class="tab-btn" data-tab="a-level">A-Level (S5-S6)</button>
+            </div>
+            <div id="o-level" class="tab-content active">
+                <p>Our O-Level curriculum (Senior 1 to Senior 4) provides a strong foundation in core subjects while
+                    allowing students to explore their interests through elective courses. The curriculum culminates in
+                    the South Sudan Certificate of Secondary Education (SSCSE) examinations.</p>
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Mathematics</h3>
+                        <p>Algebra, Geometry, Statistics, and Trigonometry</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Sciences</h3>
+                        <p>Physics, Chemistry, and Biology</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Languages</h3>
+                        <p>English, Arabic, and Indigenous Languages</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-globe-africa"></i>
+                        </div>
+                        <h3>Humanities</h3>
+                        <p>History, Geography, and Religious Studies</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>ICT</h3>
+                        <p>Computer Studies and Information Technology</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Business Studies</h3>
+                        <p>Commerce, Accounting, and Entrepreneurship</p>
+                    </div>
+                </div>
+            </div>
+            <div id="a-level" class="tab-content">
+                <p>Our A-Level curriculum (Senior 5 to Senior 6) offers specialized study paths that prepare students
+                    for university education. Students select three or four subjects based on their career aspirations
+                    and academic strengths.</p>
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h3>Advanced Sciences</h3>
+                        <p>Physics, Chemistry, and Biology at advanced level</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-square-root-alt"></i>
+                        </div>
+                        <h3>Advanced Mathematics</h3>
+                        <p>Pure Mathematics, Mechanics, and Statistics</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3>Advanced Humanities</h3>
+                        <p>History, Geography, and Literature</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Advanced Business</h3>
+                        <p>Economics, Accounting, and Business Management</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Advanced ICT</h3>
+                        <p>Computer Science and Information Systems</p>
+                    </div>
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>Advanced Languages</h3>
+                        <p>English Literature and Language Studies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="departments">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Departments</h2>
+                <p>Our school is organized into specialized departments, each led by experienced educators dedicated to
+                    excellence in their fields.</p>
+            </div>
+            <div class="departments-grid">
+                <div class="department-card">
+                    <div class="department-header">
+                        <i class="fas fa-flask"></i>
+                        <h3>Science Department</h3>
+                    </div>
+                    <div class="department-content">
+                        <p>Our Science Department fosters scientific inquiry and critical thinking through practical
+                            experiments and theoretical learning. Students develop a deep understanding of natural
+                            phenomena and scientific principles.</p>
+                        <div class="department-subjects">
+                            <span class="department-subject">Physics</span>
+                            <span class="department-subject">Chemistry</span>
+                            <span class="department-subject">Biology</span>
+                            <span class="department-subject">Agricultural Science</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="department-card">
+                    <div class="department-header">
+                        <i class="fas fa-book"></i>
+                        <h3>Arts Department</h3>
+                    </div>
+                    <div class="department-content">
+                        <p>The Arts Department cultivates creativity, critical analysis, and cultural awareness.
+                            Students explore literature, history, and social studies to develop a comprehensive
+                            understanding of human society and expression.</p>
+                        <div class="department-subjects">
+                            <span class="department-subject">English</span>
+                            <span class="department-subject">Literature</span>
+                            <span class="department-subject">History</span>
+                            <span class="department-subject">Geography</span>
+                            <span class="department-subject">Religious Studies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="department-card">
+                    <div class="department-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Business Department</h3>
+                    </div>
+                    <div class="department-content">
+                        <p>Our Business Department prepares students for the commercial world by teaching fundamental
+                            business principles, financial literacy, and entrepreneurial skills. Students learn to
+                            analyze markets and develop business strategies.</p>
+                        <div class="department-subjects">
+                            <span class="department-subject">Commerce</span>
+                            <span class="department-subject">Accounting</span>
+                            <span class="department-subject">Economics</span>
+                            <span class="department-subject">Entrepreneurship</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="department-card">
+                    <div class="department-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>ICT Department</h3>
+                    </div>
+                    <div class="department-content">
+                        <p>The ICT Department equips students with essential digital skills for the modern world. From
+                            basic computer literacy to advanced programming, students learn to harness technology for
+                            problem-solving and innovation.</p>
+                        <div class="department-subjects">
+                            <span class="department-subject">Computer Studies</span>
+                            <span class="department-subject">Information Technology</span>
+                            <span class="department-subject">Programming</span>
+                            <span class="department-subject">Digital Media</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="programs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Special Academic Programs</h2>
+                <p>We offer specialized programs to enhance learning and develop specific skills in our students.</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1422&q=80"
+                            alt="Remedial Classes">
+                    </div>
+                    <div class="program-content">
+                        <h3>Remedial Classes</h3>
+                        <p>Our remedial program provides additional support to students who need extra help in specific
+                            subjects, ensuring that no student is left behind in their academic journey.</p>
+                        <a href="#" class="program-cta">Learn More</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="ICT Training">
+                    </div>
+                    <div class="program-content">
+                        <h3>ICT Training</h3>
+                        <p>Our comprehensive ICT training program equips students with digital literacy skills essential
+                            for success in the modern world, including computer applications and internet research.</p>
+                        <a href="#" class="program-cta">Learn More</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Debate Club">
+                    </div>
+                    <div class="program-content">
+                        <h3>Debate Club</h3>
+                        <p>Our award-winning debate program develops critical thinking, public speaking, and persuasive
+                            communication skills through regular practice sessions and participation in regional
+                            competitions.</p>
+                        <a href="#" class="program-cta">Learn More</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                            alt="Talent Development">
+                    </div>
+                    <div class="program-content">
+                        <h3>Talent Development</h3>
+                        <p>Our talent development program identifies and nurtures students' unique abilities in areas
+                            such as music, art, sports, and leadership through specialized training and mentorship.</p>
+                        <a href="#" class="program-cta">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="performance">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Performance</h2>
+                <p>Unity Secondary School has consistently achieved excellent results in national examinations and
+                    competitions.</p>
+            </div>
+            <div class="performance-content">
+                <div class="performance-stats">
+                    <div class="performance-stat">
+                        <h3>95%</h3>
+                        <p>Pass Rate in SSCSE Examinations</p>
+                    </div>
+                    <div class="performance-stat">
+                        <h3>42%</h3>
+                        <p>Students Achieving Division 1</p>
+                    </div>
+                    <div class="performance-stat">
+                        <h3>85%</h3>
+                        <p>University Admission Rate</p>
+                    </div>
+                    <div class="performance-stat">
+                        <h3>12</h3>
+                        <p>National Academic Awards</p>
+                    </div>
+                </div>
+                <div class="awards-list">
+                    <h3>Recent Achievements</h3>
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="award-info">
+                            <h4>Best Performing School in Juba County</h4>
+                            <p>Awarded by the Ministry of Education, South Sudan (2024)</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="award-info">
+                            <h4>National Science Competition Winners</h4>
+                            <p>First place in the National Science and Innovation Fair (2023)</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="award-info">
+                            <h4>East African Debate Championship</h4>
+                            <p>Runners-up in the East African Secondary Schools Debate Championship (2023)</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="award-info">
+                            <h4>Excellence in Mathematics</h4>
+                            <p>Top performing school in the National Mathematics Olympiad (2022-2024)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="staff">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Teaching Staff</h2>
+                <p>Our dedicated team of qualified teachers is committed to providing the highest standard of education.
+                </p>
+            </div>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Dr. John Deng">
+                    </div>
+                    <div class="staff-info">
+                        <h3>Dr. John Deng</h3>
+                        <p>Principal & Physics Teacher</p>
+                        <div class="staff-subjects">
+                            <span class="staff-subject">Ph.D. Education</span>
+                            <span class="staff-subject">20+ Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="Ms. Sarah Akol">
+                    </div>
+                    <div class="staff-info">
+                        <h3>Ms. Sarah Akol</h3>
+                        <p>Head of Science Department</p>
+                        <div class="staff-subjects">
+                            <span class="staff-subject">Chemistry</span>
+                            <span class="staff-subject">Biology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWd
