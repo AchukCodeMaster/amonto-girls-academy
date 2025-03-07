@@ -2,6 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const galleryItems = document.querySelectorAll(".gallery-item");
 
+  // Show all images immediately on page load
+  galleryItems.forEach(item => {
+    item.classList.add("loaded");
+    item.style.opacity = "1";
+    item.style.transform = "scale(1)";
+  });
+
   // Filter functionality
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -13,27 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const filterValue = button.getAttribute("data-filter");
 
       galleryItems.forEach((item) => {
-        if (
-          filterValue === "all" ||
-          item.getAttribute("data-category") === filterValue
-        ) {
+        if (filterValue === "all" || item.getAttribute("data-category") === filterValue) {
           item.classList.remove("hidden");
-          setTimeout(() => {
-            item.style.opacity = "1";
-            item.style.transform = "scale(1)";
-          }, 50);
+          item.style.opacity = "1";
+          item.style.transform = "scale(1)";
         } else {
+          item.classList.add("hidden");
           item.style.opacity = "0";
           item.style.transform = "scale(0.9)";
-          setTimeout(() => {
-            item.classList.add("hidden");
-          }, 500); // Match this with the transition duration
         }
       });
     });
   });
 
-  // Image loading animation
+  // Image loading
   galleryItems.forEach((item) => {
     const img = item.querySelector("img");
     img.addEventListener("load", () => {

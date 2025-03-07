@@ -1034,6 +1034,17 @@ body {
   }
 }
 
+.gallery-subheader {
+  justify-content: center;
+  display: flex;
+}
+
+.gallery-header {
+  margin-top: 80px;
+  justify-content: center;
+  display: flex;
+}
+
 /* Why Choose Us Section */
 .why-choose-us {
   padding: 5rem 0;
@@ -1553,7 +1564,7 @@ body {
 }
 
 /* Gallery Page Styles */
-.gallery-filters {
+/* .gallery-filters {
   padding: 2rem 0;
   background: var(--white);
   border-bottom: 1px solid var(--light-bg);
@@ -1683,10 +1694,10 @@ body {
   .gallery-item {
     margin: 0;
   }
-}
+} */
 
 /* Gallery Page Styles */
-.gallery-filters {
+/* .gallery-filters {
   padding: 2rem 0;
   background: var(--white);
   border-bottom: 1px solid var(--light-bg);
@@ -1816,7 +1827,7 @@ body {
   .gallery-item {
     margin: 0;
   }
-}
+} */
 
 /* Department Page Styles */
 .department-structure {
