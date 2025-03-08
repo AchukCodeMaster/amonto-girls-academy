@@ -1,40 +1,40 @@
 // Teacher data
 export const teachers = [
   {
-    name: "Sarah Johnson",
+    name: "Ayen Mathiang",
     subject: "Mathematics",
     image:
-      "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1601935111741-ae98b2b230b0?w=300&auto=format&fit=crop",
   },
   {
-    name: "Michael Chen",
-    subject: "Science",
+    name: "John Deng",
+    subject: "Physics",
     image:
-      "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1506099914961-765be7a97019?w=300&auto=format&fit=crop",
   },
   {
-    name: "Emily Rodriguez",
-    subject: "English Literature",
+    name: "Grace Akol",
+    subject: "English Language",
     image:
-      "https://images.unsplash.com/photo-1601655781320-205e34c94eb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=300&auto=format&fit=crop",
   },
   {
-    name: "David Wilson",
+    name: "Peter Garang",
     subject: "History",
     image:
-      "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1553907725-c3d2e2ccc00e?w=300&auto=format&fit=crop",
   },
   {
-    name: "Maria Garcia",
-    subject: "Spanish",
+    name: "Mary Aduol",
+    subject: "Biology",
     image:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=300&auto=format&fit=crop",
   },
   {
-    name: "James Thompson",
+    name: "Simon Wani",
     subject: "Physical Education",
     image:
-      "https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&auto=format&fit=crop",
   },
 ];
 
